@@ -1,7 +1,8 @@
-#include  <iostream>/*³o¬O¼ÐÀYÀÉ¡A§A¥Î¤£¦P¼ÐÀYÀÉ¦³¤£¦P¨ç¦¡®w¡AµM«áiostream¥\¯à¥]¬A³Ì°òÂ¦ªº¿é¥X¿é¤J¬y*/  
-using namespace std;/*³o¤@¦æµ¥©ó»¡¨Ï¥Î namespace ¨Ó©w¸q¦WºÙªÅ¶¡¡AÅ¥¤£À´¨SÃö«Y¡A¤Ï¥¿°O±o­n¼g¡A«Ü­«­n*/  
-/*µM«á¬O¥Dµ{¦¡°Ï*/  
-int main(){  
-    cout << "Hello!"/*cout¬O¿é¥Xªº·N«ä¡AÂù¦r²Å¨í°_¨Óªº¬O§A¿é¥Xªº¦r¦ê*/;  
-    return 0;/*¦^¶Ç­È¡A¤£­«­n¡A°O±o¼g´N¹ï¤F*/  
-}  
+#include <iostream>  
+using namespace std;  
+int main() {  
+    cout<<"This is a book."<<endl;/*endlæ˜¯æ›è¡Œçš„æ„æ€*/  
+    cout<<"That is a pen."<<endl;  
+    cout<<"I am a student."<<endl;  
+    return 0;  
+}   
