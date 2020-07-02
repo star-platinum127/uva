@@ -1,0 +1,61 @@
+#include <iostream>
+#include<algorithm>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+typedef long long ll;
+int arr[20][20];
+bool flag;
+int ans1=0;
+int ans2=0;
+int dx[8]={-1,-1,-1,0,0,1,1,1};
+int dy[8]={-1,0,1,-1,1,-1,0,1};
+int main(int argc, char** argv) {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	int n,m;
+	cin>>n>>m;
+	flag=0;
+	int c=0;
+	int cou=0;
+	for(int i=0;i<n;i++){
+		for(int j=0;j<m;j++){
+			cin>>arr[i][j];
+			if(arr[i][j]==1) cou++;
+		}
+	}
+	for(int i=0;i<n;i++){
+		for(int j=0;j<m;j++){
+			if(arr[i][j]==5){
+				for(int k=0;k<8;k++){
+					int x=i+dx[k];
+					int y=j+dy[k];
+					if(x>=0 && x<n && y>=0 && y<m){
+						if(arr[x][y]==5){
+							flag=1;
+						}
+					}
+				}	
+			
+				if(flag==0){
+					for(int k=0;k<8;k++){
+						int x=i+dx[k];
+						int y=j+dy[k];
+						if(x>=0 && x<n && y>=0 && y<m){
+							if(arr[x][y]==1){
+								arr[x][y]=0;
+								c++;
+							}	
+						}
+					}
+				}	
+			}
+			ans1+=c;
+			c=0;
+			flag=0;	
+		}
+	}
+	ans2=cou-ans1;
+	cout<<ans1<<" "<<ans2<<endl;
+
+	return 0;
+}
