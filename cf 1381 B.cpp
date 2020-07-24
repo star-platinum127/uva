@@ -3,9 +3,9 @@ using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 typedef long long ll;
 #define pb push_back
-int arr[2005];
-int dp[2005];
-int ans[2005];
+int arr[4005];
+int dp[4005];
+int ans[4005];
 vector<int> v[2005];
 int main(int argc, char** argv) {
 	ios_base::sync_with_stdio(0);
