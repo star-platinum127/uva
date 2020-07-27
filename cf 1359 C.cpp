@@ -21,17 +21,17 @@ int main(int argc, char** argv) {
 			ll mid = l + r >> 1;
 			double ans= ((mid + 1) * h + mid * c) / (2 * mid + 1);
 			if (ans <= n) r = mid;
-          		else l = mid;
-			} 
-			int cur=0;
-			double mini=1e9;
-			for(ll i=l;i<=r;i++){
-				double buf=(((i + 1) * h + i * c) / (2 * i + 1)) - n;
-				if(fabs(mini)>fabs(buf)){
-					cur=i;
-					mini=buf;
-				}
+          	else l = mid;
+		} 
+		int cur=0;
+		double mini=1e9;
+		for(ll i=l;i<=r;i++){
+			double buf=(((i + 1) * h + i * c) / (2 * i + 1)) - n;
+			if(fabs(mini)>fabs(buf)){
+				cur=i;
+				mini=buf;
 			}
+		}
 		cout<<cur*2+1;
 		cout<<endl;
 	}
