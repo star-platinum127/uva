@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+typedef long long ll;
+#define miku mywaifu
+#define misaka mywaifu
+ll solve(ll x,ll y,ll p){
+	ll ans=1,dx=x;
+	while(y>0){
+		if(y&1) ans=(ans*dx)%p;
+		y>>=1;
+		dx=(dx*dx)%p;
+	}
+	return ans;
+}
+int main(int argc, char** argv) {
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	int x,y,p;
+	cin>>x>>y>>p;
+	cout<<solve(x,y,p);
+	return 0;
+}
