@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
 	int ans=0;
 	for(int i=0;i<n;i++){
 		while(pos<n){
-			if(arr[pos]>b[i]){
+			if(b[pos]>arr[i]){
 				pos++;
 				ans++;
 				break;
