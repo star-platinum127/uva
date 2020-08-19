@@ -1,0 +1,19 @@
+P-6-7. LCS 
+輸入兩字串，計算其 LCS 的長度。 
+Time limit: 1 秒 
+輸入格式：第一行與第二行個有一個字串，字串均只含小寫字母，長度不超過 500。 
+輸出：LCS 長度。 
+範例一輸入： 
+algorithm alignment 
+ 
+範例一輸出： 
+4 
+ 
+範例二輸入： 
+fakefamefade acefaaace 
+ 
+ 
+範例二輸出： 
+6 
+範例一說明：algm 或 algt 都是 LCS。 
+範例二說明：LCS 是 aefaae。
