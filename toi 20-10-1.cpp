@@ -49,7 +49,6 @@ signed main() {
 		if (pos == 9 || pos == 0) continue;
 		if (pos == 1 && i > 10) {
 			a--;
-			continue;
 		}
 		cnt++;
 		if (cnt % 3 == 0) s += (s / 3),cnt=0;
@@ -57,3 +56,4 @@ signed main() {
 	}
 	return 0;
 }
+
