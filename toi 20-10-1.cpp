@@ -35,6 +35,7 @@ signed main() {
 	cin.tie(0);
 	int s, e, a;
 	cin >> s >> e >> a;
+	int cnt = 0;
 	for (int i = 1;i;i++) {
 		if (!a) {
 			cout << "unsalable" << "\n";
@@ -50,7 +51,8 @@ signed main() {
 			a--;
 			continue;
 		}
-		if (i % 3 == 0) s += (s / 3);
+		cnt++;
+		if (cnt % 3 == 0) s += (s / 3),cnt=0;
 		else s += (s / 10);
 	}
 	return 0;
