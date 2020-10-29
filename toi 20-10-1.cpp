@@ -35,31 +35,23 @@ signed main() {
 	cin.tie(0);
 	int s, e, a;
 	cin >> s >> e >> a;
-		int i = 1;
-		int tmp = 0;
-		bool flag = 0;
-		while (1) {
-			if (!a) {
-				cout << "unsalable" << "\n";
-				break;
-			}
-			if (s>= e) {
-				cout << i+(tmp*10)<< "\n";
-				break;
-			}
-			if (i == 1 && flag){
-				a--, i++;
-				continue;
-			}
-			if (i > 8) {
-				flag = 1;
-				i++;
-				if (i % 8 == 2) i = 1,tmp++;
-				continue;
-			}
-			if (i % 3 ==0) s+= (s / 3);
-			else s+= (s / 10);
-			i++;
+	for (int i = 1;i;i++) {
+		if (!a) {
+			cout << "unsalable" << "\n";
+			break;
 		}
+		int pos = i % 10;
+		if (s >= e) {
+			cout << i << "\n";
+			break;
+		}
+		if (pos == 9 || pos == 0) continue;
+		if (pos == 1 && i > 10) {
+			a--;
+			continue;
+		}
+		if (i % 3 == 0) s += (s / 3);
+		else s += (s / 10);
+	}
 	return 0;
 }
