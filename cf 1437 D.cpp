@@ -29,70 +29,31 @@ __lg(_Size __n)
 	return __k - 1;
 }
 /*-----------------------------------------------*/
-constexpr ll N = 100025;
-struct Fenwicktree {
-	ll sum1[N], n;
-	void init(ll arr[], int _n) {
-		n = _n;
-		for (int i = 1;i <= n;i++) sum1[i] = arr[i] - arr[i-(i&-i)];
-	}
-	ll query(int p) {
-		ll tmp = 0;
-		for (;p;p -=(p&-p)) tmp += sum1[p];
-		return tmp;
-	}
-	void modify(int p, ll x) {
-		for (;p <= n;p +=(p&-p)) sum1[p] += x;
-	}
-}BIT;
-struct segmenttree{
-	ll seg[N << 1],n;
-	void init(ll arr[], int _n) {
-		n = _n;
-		for (int i = 0;i < n;i++){
-			seg[i + n] = arr[i];
-		}
-		for (int i = n - 1;i > 0;i--) seg[i] =__gcd(seg[i << 1], seg[i << 1 | 1]);
-	}
-	ll query(int l, int r) {
-		ll tmp=0;
-		for (l += n, r += n;r > l;r >>= 1, l >>= 1) {
-			if (l & 1) tmp=__gcd(tmp, seg[l++]);
-			if (r & 1) tmp =__gcd(tmp, seg[--r]);
-		}
-		return abs(tmp);
-	}
-	void modify(int p,ll x) {
-		for (seg[p += n]+=x;p > 1;p >>= 1) {
-			seg[p >> 1] =__gcd(seg[p], seg[p ^ 1]);
-		}
-	}
-}sgt;
-ll arr[N];
-int n, q;
+int arr[200005];
 signed main() {
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
-	cin >> n >> q;
-	for (int i = 1;i <=n;i++) cin >> arr[i];
-	BIT.init(arr, n);
-	arr[0] = 0;
-	for (int i = 0;i < n;i++) arr[i] = arr[i + 1] - arr[i];
-	sgt.init(arr, n);
-	while (q--) {
-		int t,l,r;
-		ll d;
-		cin >> t;
-		if (t == 1) {
-			cin >> l >> r >> d;
-			BIT.modify(l, d);
-			BIT.modify(r + 1, -d);
-			sgt.modify(l-1, d);
-			sgt.modify(r, -d);
+	int t;
+	cin >> t;
+	while (t--) {
+		int n;
+		cin >> n;
+		for (int i = 0;i < n;i++) cin >> arr[i];
+		int d = 1;
+		int maxi = 0;
+		map<int, int> mp;
+		mp[0] = 1;
+		for (int i = 1;i < n;i++) {
+			if (arr[i]< arr[i - 1]) {
+				mp[d - 1]--;
+			}
+			if (!mp[d - 1]) {
+				d++;
+			}
+			mp[d]++;
+			
 		}
-		else {
-			cin >> l >> r;
-			cout << abs(__gcd(BIT.query(r), sgt.query(l, r)))<<"\n";
-		}
+		cout << d << "\n";
 	}
+	return 0;
 }
