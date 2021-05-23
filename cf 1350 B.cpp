@@ -1,7 +1,5 @@
-#include <iostream>
-#include<algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 typedef long long ll;
 const int maxn=100005;
 int arr[maxn];
