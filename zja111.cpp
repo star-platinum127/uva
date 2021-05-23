@@ -1,9 +1,8 @@
 #include <iostream>
 #include<cmath>
 using namespace std;
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 typedef long long ll;
-int main(int argc, char** argv) {
+int main() {
 	ll dp[101];
 	int n;
 	while(cin>>n){
@@ -14,7 +13,5 @@ int main(int argc, char** argv) {
 		}
 		cout<<dp[n-1]<<endl;	
 	}
-	
-	
 	return 0;
 }
